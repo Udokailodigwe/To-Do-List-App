@@ -29,6 +29,15 @@ function newItem(){
    function deleteListItem(){
  		li.addClass("delete")
  	}
+
  // 4. Reordering the items: 
    $('#list').sortable();
 }
+
+//5. Adding eventlistener on enter key for add button.
+document.addEventListener('keypress', function(e) {
+if(e.key==='Enter' && $("#input").val() != ""){
+e.preventDefault()
+newItem()
+}
+})
